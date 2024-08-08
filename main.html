@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team event</title>
+    <title>Main Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href = "https://docs.google.com/spreadsheets/d/1zh0JhCSQAAx_DAX0thtRqsd6mNaEbSKVeEQCv973YwA/edit?pli=1&gid=0#gid=0">토지관리</a>
-    <a href = "https://docs.google.com/spreadsheets/d/1EGsD149Ifk6bGet6WjOHgEaF-MzaXI9r3tqUbss-lzg/edit?usp=drivesdk">은행</a>
-    <a href = "https://drive.google.com/drive/folders/1qeRJ1f-uGmn9fV-lJc-_k3uFSNiLpxdu">이벤트 게임들</a>
+    <div class="container">
+        <h1>Welcome to the Main Page!</h1>
+        <p id="user-info">You have successfully logged in.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // localStorage에서 로그인한 사용자 ID를 가져와 표시
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            document.getElementById('user-info').innerText = `Welcome, ${loggedInUser}!`;
+        } else {
+            // 만약 로그인 정보가 없다면 로그인 페이지로 이동
+            window.location.href = 'index.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
