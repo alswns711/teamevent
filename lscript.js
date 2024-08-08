@@ -33,7 +33,10 @@ function login() {
         const storedPassword = localStorage.getItem(username);
         if (storedPassword && storedPassword === password) {
             alert('Login successful!');
-            // 로그인 성공 시의 로직을 여기에 추가하세요.
+            // 로그인한 사용자 ID를 localStorage에 저장
+            localStorage.setItem('loggedInUser', username);
+            // main.html로 이동
+            window.location.href = 'main.html';
         } else {
             alert('Invalid username or password.');
         }
