@@ -1,7 +1,8 @@
 html {background-color: white;}
 button {
 	font-size: 20px
-	
+	background-color: blue
+ color: blue
 }
 body {
   font-family: Arial, sans-serif;
