@@ -1,9 +1,13 @@
 html {background-color: white;}
 button {
- font-size: 20px
- color: white
- background-color: blue
- border: none
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
  
 }
 body {
