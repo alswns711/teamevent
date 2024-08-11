@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to team event!</title>
-    <link href="lstyle.css" rel="stylesheet" type="text/css" />
+    <title>단리 이자 계산기</title>
+    <link rel="stylesheet" href="lstyle.css">
+    <script>
+        function calculateFinalAmount() {
+            // 입력 값 가져오기
+            const principal = parseFloat(document.getElementById("principal").value);
+            const days = parseFloat(document.getElementById("days").value);
+
+            // 이율 및 일수에 따른 이자 계산
+            const interestRate = 0.03; // 3%
+            const interest = principal * interestRate * (days / 365);
+
+            // 최종 금액 계산
+            const finalAmount = principal + interest;
+
+            // 결과 출력
+            document.getElementById("result").innerText = "최종 금액: " + finalAmount.toFixed(2) + " 원";
+        }
+    </script>
 </head>
 <body>
-    <h1>계산기</h1>
-    <input type="text" id="firstmoney" placeholder="첫 금액" required>
-    <input type="text" id="days" placeholder="지난 날짜" required>
-    <button onclick="calculate()">계산</button>
-    <p>결과</p>
-    <script>
-        function calculate(){
-let firstmoney = document.querySelector('#firstmoney')
-let days = document.querySelector('#days')
-let total = firstmoney.value
-}
-          
+    <div class="container">
+        <h1>단리 이자 계산기</h1>
+        <form onsubmit="event.preventDefault(); calculateFinalAmount();">
+            <label for="principal">최초 금액 (원):</label>
+            <input type="number" id="principal" required><br><br>
+
+            <label for="days">경과 일수:</label>
+            <input type="number" id="days" required><br><br>
+
+            <button type="submit">계산하기</button>
+        </form>
+
+        <h2 id="result">최종 금액: </h2>
+    </div>
 </body>
 </html>
