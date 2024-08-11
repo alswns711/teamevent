@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>단리 이자 계산기</title>
+    <title>이벤트 공식 은행 계산기</title>
     <link rel="stylesheet" href="lstyle.css">
     <script>
         function calculateFinalAmount() {
@@ -11,9 +11,11 @@
             const principal = parseFloat(document.getElementById("principal").value);
             const days = parseFloat(document.getElementById("days").value);
 
-            // 이율 및 일수에 따른 이자 계산
-            const interestRate = 0.03; // 3%
-            const interest = principal * interestRate * (days / 365);
+            // 이율 계산: 하루에 3/7% (주 3%를 일 단위로 변환)
+            const dailyInterestRate = 0.03 / 7; // 하루 이자율
+
+            // 단리 이자 계산
+            const interest = principal * dailyInterestRate * days;
 
             // 최종 금액 계산
             const finalAmount = principal + interest;
@@ -25,9 +27,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>단리 이자 계산기</h1>
+        <h1>이벤트 공식 계산기</h1>
         <form onsubmit="event.preventDefault(); calculateFinalAmount();">
-            <label for="principal">최초 금액 (원):</label>
+            <label for="principal">최초 금액(이벤트):</label>
             <input type="number" id="principal" required><br><br>
 
             <label for="days">경과 일수:</label>
