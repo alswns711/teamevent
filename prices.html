@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#" onclick="jadd('5')">오두막 5이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('8')">집 8이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('13')">저택 13이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('20')">대저택 20이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('30')">아파트 30이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('43')">더블 아파트 43이벤트</a>
+    <br>
+    <a href="#" onclick="jadd('56')">트리플 아파트 56이벤트</a>
+    <br>
+    <p id="add">0</p>
+
+    <script>
+        function jadd(x){
+            let value = +document.getElementById('add').innerText;
+            value += +x;
+            document.getElementById('add').innerText = value;
+        }
+    </script>
+
+</body>
+</html>
